@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+
+{% block navbar %}
+    <li class="t228__list_item">
+        <a class="t-menu__link-item" href="#" data-menu-submenu-hook="" data-menu-item-number="1">Регистрация</a>
+    </li>
+    <li class="t228__list_item">
+        <a class="t-menu__link-item" href="#" data-menu-submenu-hook="" data-menu-item-number="2">Вход</a>
+    </li>
+{% endblock %}
+
+
+{% block top_background %}
+    {{ top_backgroung.image.url }}
+{% endblock %}
+
+
+{% block items %}
+    {% for item in items %}
+        <div class="t778__col t-col t-col_6 t-align_center t-item t778__col_mobile-grid js-product" data-product-lid={{ item.data_product_lid }}>
+            <div class="t778__wrapper" style="background-color: #f1f1f1;">
+                <a class="js-product-link" href="https://nobehave.ru/shire">
+                    <div class="t778__imgwrapper " style="padding-bottom:83.928571428571%;">
+                        <div class="t778__bgimg t778__bgimg_first_hover t-bgimg js-product-img loaded" data-original={{ item.image.url }} style="background-image: url(&quot;https://thumb.tildacdn.com/tild6330-3234-4536-b231-616632656131/-/cover/560x470/center/center/-/format/webp/dyiy.jpg&quot;);"
+                            bgimgfield="li_gallery__{{ item.data_product_lid }}:::0" src=""></div>
+                        <div class="t778__bgimg t778__bgimg_second t-bgimg loaded" data-original={{ item.image_mouseover.url }} style="background-image: url(&quot;https://thumb.tildacdn.com/tild6562-6364-4838-b336-353837633066/-/cover/560x470/center/center/-/format/webp/fuhoit.jpg&quot;);"
+                            src=""></div>
+                    </div>
+                </a>
+                <div class="t778__content" style="height: 213px;">
+                    <a href="https://nobehave.ru/shire">
+                        <div class="t778__textwrapper t778__paddingbig">
+                            <div class="t778__title t-name t-name_xl js-product-name" field="li_title__{{ item.data_product_lid }}" style="color:#2e2e2e;font-size:22px;font-weight:400;font-family:'Akz';">{{ item.title }}<br></div>
+                            <div class="t778__price-wrapper">
+                                <div class="t778__price t778__price-item t-name t-name_xs" style="margin-right:3px;color:#2e2e2e;font-size:22px;font-weight:400;">
+                                    <div class="t778__price-value js-product-price" field="li_price__{{ item.data_product_lid }}">{{ item.price }}</div>
+                                    <div class="t778__price-currency">р.</div>
+                                </div>
+                                {% if item.old_price %}
+                                    <div class="t778__price_old t778__price-item t-name t-name_xs" style="color:#707070;font-size:22px;font-weight:400;">
+                                        <div class="t778__price-value" field="li_price_old__{{ item.data_product_lid }}">{{ item.old_price }}</div>
+                                        <div class="t778__price-currency">р.</div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </a>
+                    <div class="t778__btn-wrapper_absolute t778__paddingbig">
+                        <a href="https://nobehave.ru/shire" class="t778__btn t778__btn t-btn t-btn_xs" style="color:#ffffff;background-color:#000000;border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;font-family:Akz;font-weight:400;">
+                            <table style="width:100%; height:100%;">
+                                <tbody>
+                                    <tr>
+                                        <td>Подробнее</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+
+{% block b3_first_image %}
+    {{ block_3_images.first_image.url }}
+{% endblock %}
+
+{% block b3_second_image %}
+    {{ block_3_images.second_image.url }}
+{% endblock %}
+
+{% block 1_reviewer_name %}
+    {{ reviews.first_reviewer_name }}
+{% endblock %}
+{% block 1_review %}
+    {{ reviews.first_review }}
+{% endblock %}
+
+{% block 2_reviewer_name %}
+    {{ reviews.second_reviewer_name }}
+{% endblock %}
+{% block 2_review %}
+    {{ reviews.second_review }}
+{% endblock %}
+
+{% block 3_reviewer_name %}
+    {{ reviews.third_reviewer_name }}
+{% endblock %}
+{% block 3_review %}
+    {{ reviews.third_review }}
+{% endblock %}
+
+{% block 4_reviewer_name %}
+    {{ reviews.fourth_reviewer_name }}
+{% endblock %}
+{% block 4_review %}
+    {{ reviews.fourth_review }}
+{% endblock %}
+
+{% block 5_reviewer_name %}
+    {{ reviews.fifth_reviewer_name }}
+{% endblock %}
+{% block 5_review %}
+    {{ reviews.fifth_review }}
+{% endblock %}
+
+{% block 6_reviewer_name %}
+    {{ reviews.sixth_reviewer_name }}
+{% endblock %}
+{% block 6_review %}
+    {{ reviews.sixth_review }}
+{% endblock %}
+
+
+
+{% block phone_number %}
+    {{ contacts.phone_number }}
+{% endblock %}
+
+{% block email %}
+    {{ contacts.email }}
+{% endblock %}
+
+{% block address %}
+    {{ contacts.address }}
+{% endblock %}
