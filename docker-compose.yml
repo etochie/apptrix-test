@@ -8,6 +8,8 @@ services:
             - main
         ports:
             - 80:80
+        volumes:
+            - ./main/media:/nginx/media
 
     main:
         build:
@@ -17,6 +19,8 @@ services:
             python manage.py makemigrations &&
             python manage.py migrate &&
             gunicorn config.wsgi -c ./config/gunicorn.py"
+        volumes:
+            - ./main/media:/main/media
         depends_on:
             - db
         environment:
