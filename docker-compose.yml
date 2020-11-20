@@ -18,6 +18,7 @@ services:
         command: bash -c "sleep 2 &&
             python manage.py makemigrations &&
             python manage.py migrate &&
+            python manage.py loaddata fixtures.json &&
             gunicorn config.wsgi -c ./config/gunicorn.py"
         volumes:
             - ./main/media:/main/media
