@@ -1,24 +1,11 @@
-from rest_framework import serializers
-from django.shortcuts import redirect
 from django.contrib.auth.hashers import make_password
-from django.core.mail import send_mail
 from django.contrib.auth.models import User
+from django.core.mail import send_mail
+from rest_framework import serializers
 from rest_framework.authtoken.models import Token
 
 from apps.core.models import Contacts
 
-
-# def send_activation_email(request, user):
-#     from_email = Contacts.objects.last().email
-#     token = Token.objects.get(user=user)
-#     send_mail(
-#         'Активируйте аккаунт',
-#         'http://0.0.0.0:8000/activate/{0}/{1}'.format(user.pk, token),
-#         from_email=from_email,
-#         recipient_list=(user.email, ),
-#         fail_silently=False,
-#     )
-#     return redirect('landing_url')
 
 class UserSerializer(serializers.ModelSerializer):
     token = serializers.CharField(
@@ -47,7 +34,7 @@ class UserSerializer(serializers.ModelSerializer):
         token = Token.objects.get(user=user)
         send_mail(
             'Активируйте аккаунт',
-            'http://0.0.0.0:8000/activate/{0}/{1}'.format(user.pk, token),
+            'http://localhost/activate/{0}/{1}'.format(user.pk, token),
             from_email=from_email,
             recipient_list=(user.email,),
             fail_silently=False,

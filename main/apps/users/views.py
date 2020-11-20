@@ -1,9 +1,9 @@
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
 from rest_framework import mixins
-from rest_framework.viewsets import GenericViewSet
-from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
+from rest_framework.views import APIView
+from rest_framework.viewsets import GenericViewSet
 
 from apps.users.serializers import UserSerializer
 

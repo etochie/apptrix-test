@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
 from django.core.mail import send_mail
+from django.shortcuts import render, redirect
 
-from apps.core.models import TopBackgroundImage, ItemModel, Block3Image,\
+from apps.core.models import TopBackgroundImage, ItemModel, Block3Image, \
     Reviews, Contacts
 from .forms import OrderForm
+
 
 def landing(request):
     form = OrderForm()

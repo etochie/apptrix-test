@@ -1,5 +1,6 @@
 from django.contrib import admin
-from apps.core.models import TopBackgroundImage, ItemModel, Block3Image,\
+
+from apps.core.models import TopBackgroundImage, ItemModel, Block3Image, \
     Reviews, Contacts
 
 

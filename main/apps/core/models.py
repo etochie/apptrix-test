@@ -6,6 +6,9 @@ from django.db import models
 def image_upload_path(instance, filename):
     return '{0}/{1}'.format(instance.title, filename)
 
+def generate_product_lid():
+    return str(int(time()))
+
 
 class TopBackgroundImage(models.Model):
     image_width = models.PositiveSmallIntegerField(
@@ -36,7 +39,7 @@ class ItemModel(models.Model):
     )
     data_product_lid = models.PositiveIntegerField(
         verbose_name='id для генерации в шаблоне',
-        default=str(int(time())),
+        default=generate_product_lid(),
         blank=True,
         null=True
     )
@@ -81,6 +84,7 @@ class ItemModel(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Block3Image(models.Model):
     image_width = models.PositiveSmallIntegerField(
