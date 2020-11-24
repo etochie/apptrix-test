@@ -14,6 +14,9 @@
 {% block top_background %}
     {{ top_backgroung.image.url }}
 {% endblock %}
+{% block top_background_tumb %}
+    {{ top_backgroung.image.url }}
+{% endblock %}
 
 
 {% block items %}
@@ -22,9 +25,9 @@
             <div class="t778__wrapper" style="background-color: #f1f1f1;">
                 <a class="js-product-link" href="#">
                     <div class="t778__imgwrapper " style="padding-bottom:83.928571428571%;">
-                        <div class="t778__bgimg t778__bgimg_first_hover t-bgimg js-product-img loaded" data-original={{ item.image.url }} style="background-image: url(&quot;https://thumb.tildacdn.com/tild6330-3234-4536-b231-616632656131/-/cover/560x470/center/center/-/format/webp/dyiy.jpg&quot;);"
+                        <div class="t778__bgimg t778__bgimg_first_hover t-bgimg js-product-img loaded" data-original={{ item.image.url }} style="background-image: url({{ item.image.url }});"
                             bgimgfield="li_gallery__{{ item.data_product_lid }}:::0" src=""></div>
-                        <div class="t778__bgimg t778__bgimg_second t-bgimg loaded" data-original={{ item.image_mouseover.url }} style="background-image: url(&quot;https://thumb.tildacdn.com/tild6562-6364-4838-b336-353837633066/-/cover/560x470/center/center/-/format/webp/fuhoit.jpg&quot;);"
+                        <div class="t778__bgimg t778__bgimg_second t-bgimg loaded" data-original={{ item.image_mouseover.url }} style="background-image: url({{ item.image_mouseover.url }});"
                             src=""></div>
                     </div>
                 </a>
@@ -67,8 +70,14 @@
 {% block b3_first_image %}
     {{ block_3_images.first_image.url }}
 {% endblock %}
+{% block b3_first_image_tumb %}
+    {{ block_3_images.first_image.url }}
+{% endblock %}
 
 {% block b3_second_image %}
+    {{ block_3_images.second_image.url }}
+{% endblock %}
+{% block b3_second_image_tumb %}
     {{ block_3_images.second_image.url }}
 {% endblock %}
 
